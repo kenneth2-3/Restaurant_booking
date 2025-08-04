@@ -23,6 +23,7 @@ from django.shortcuts import render
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('menu/', include('menu.urls')),
+    path('book/', include('bookings.urls')),
     path('', lambda request: render(request, 'home.html'), name='home'),
 ]
 
