@@ -11,7 +11,7 @@ def book_table(request):
         form = BookingForm(request.POST)
         if form.is_valid():
             form.save()
-            return render(request, 'bookings/booking_success.html')
+            return render(request, 'bookings/booking_success.html', {'token': Booking.cancel_token})
     else:
         form = BookingForm()
     return render(request, 'bookings/book_table.html', {'form': form})
