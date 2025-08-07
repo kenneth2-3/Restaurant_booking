@@ -28,10 +28,15 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+      <!-- Navbar content -->
       <div class="container">
-        <a class="navbar-brand" href="{% url 'home' %}">AYCE</a>
-        <div class="collapse navbar-collapse">
+        <a class="navbar-brand" href="#">AYCE</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'menu_list' %}">Menu</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'book_table' %}">Book</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
