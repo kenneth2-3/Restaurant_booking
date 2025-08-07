@@ -4,6 +4,8 @@
 <div class="container text-center py-5">
     <h2>Thank you!</h2>
     <p>Your table has been booked.</p>
+    <p>You can cancel your booking at any time using this link:</p>
+    <p><a href="{% url 'cancel_booking' token=form.instance.cancel_token %}" class="btn btn-danger mt-2">Cancel Booking</a></p>
     <a href="{% url 'home' %}" class="btn btn-light mt-3">Back to Home</a>
 </div>
 {% endblock %}
