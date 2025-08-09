@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5">
+    <h2>My Bookings</h2>
+    <ul>
+        {% for booking in bookings %}
+            <li>{{ booking.date }} at {{ booking.time }} - Guests: {{ booking.guests }} {% if booking.canceled %}(Cancelled){% endif %}</li>
+        {% empty %}
+            <li>You have no bookings yet.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

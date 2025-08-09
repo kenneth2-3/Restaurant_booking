@@ -3,6 +3,7 @@ from .forms import BookingForm
 from django.http import HttpResponseNotFound
 from django.contrib import messages
 from .models import Booking
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -20,6 +21,10 @@ def book_table(request):
     
     return render(request, 'bookings/book_table.html', {'form': form})
 
+@login_required
+def my_bookings(request):
+    bookings = Booking.objects.filter(user=request.user)
+    return render(request, 'bookings/my_bookings.html', {'bookings': bookings})
 
 def cancel_booking(request, token):
     try:
