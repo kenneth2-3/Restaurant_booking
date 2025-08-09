@@ -10,11 +10,16 @@ def book_table(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
-            booking = form.save()
+            booking = form.save(commit=False)  # Don't save to DB yet
+            if request.user.is_authenticated:
+                booking.user = request.user
+            booking.save()
             return render(request, 'bookings/booking_success.html', {'token': booking.cancel_token})
     else:
         form = BookingForm()
+    
     return render(request, 'bookings/book_table.html', {'form': form})
+
 
 def cancel_booking(request, token):
     try:
