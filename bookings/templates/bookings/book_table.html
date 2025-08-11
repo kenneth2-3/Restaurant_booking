@@ -9,6 +9,7 @@
         <form method="POST" novalidate>
             {% csrf_token %}
 
+            {# Use crispy forms if available #}
             {% if form|length %}
                 {{ form|crispy }}
             {% else %}
@@ -39,3 +40,4 @@
     </div>
 </div>
 {% endblock %}
+
