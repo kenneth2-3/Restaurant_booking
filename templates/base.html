@@ -15,17 +15,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-
-        {% comment %} <style>
-        body {
-            background-color: #4b4b4fff;
-            color: white;
-        }
-        .card {
-            background-color: #444;
-            color: white;
-        } {% endcomment %}
-    </style>
 </head>
 <body>
 
@@ -42,9 +31,17 @@
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'menu_list' %}">Menu</a></li>
             <li class="nav-item"><a class="nav-link" href="{% url 'book_table' %}">Book</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+                <form method="POST" action="{% url 'logout' %}">
+                  {% csrf_token %}
+                  <button type="submit" class="nav-link btn btn-link" style="none">Logout</button>
+                </form>
+              </li>
+            {% else %}
+              <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+            {% endif %}
           </ul>
         </div>
       </div>
