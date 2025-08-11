@@ -6,3 +6,9 @@ body {
     background-color: #444;
     color: white;
 }
+
+.modal-content {
+    background-color: #2c2f33; /* a lighter dark gray */
+    border-radius: 0.5rem;
+    border: 1px solid #444;
+}

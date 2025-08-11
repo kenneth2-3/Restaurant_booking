@@ -29,14 +29,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'menu_list' %}">Menu</a></li>
-            <li class="nav-item"><a class="nav-link" href="{% url 'book_table' %}">Book</a></li>
             {% if user.is_authenticated %}
+              <li class="nav-item"><a class="nav-link" href="{% url 'menu_list' %}">Menu</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'book_table' %}">Book</a></li>
               <li class="nav-item">
                 <form method="POST" action="{% url 'logout' %}">
                   {% csrf_token %}
-                  <button type="button" class="nav-link btn btn-link" style="color: inherit; text-decoration: none;" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</button>
-                  {% comment %} <button type="submit" class="nav-link btn btn-link" style="none">Logout</button> {% endcomment %}
+                  <button type="button" class="nav-link btn btn-link" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</button>
                 </form>
               </li>
             {% else %}
