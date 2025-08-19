@@ -32,6 +32,7 @@
             {% if user.is_authenticated %}
               <li class="nav-item"><a class="nav-link" href="{% url 'menu_list' %}">Menu</a></li>
               <li class="nav-item"><a class="nav-link" href="{% url 'book_table' %}">Book</a></li>
+              <li class="nav-item"><a class="nav-link" href="{% url 'my_bookings' %}">My Bookings</a></li>
               <li class="nav-item">
                 <form method="POST" action="{% url 'logout' %}">
                   {% csrf_token %}
