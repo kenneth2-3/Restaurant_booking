@@ -30,19 +30,17 @@ def my_bookings(request):
     bookings = request.user.bookings.all().order_by('-date', '-time')
     return render(request, 'bookings/my_bookings.html', {'bookings': bookings})
 
+@login_required
 def cancel_booking(request, token):
-    try:
-        booking = Booking.objects.get(cancel_token=token)
-        if booking.canceled:
+        booking = get_object_or_404(Booking, cancel_token=token, user=request.user)
+        if booking.is_cancelled:
             messages.warning(request, "This booking was already cancelled.")
         else:
-            booking.canceled = True
+            booking.is_cancelled = True
             booking.save()
             messages.success(request, "Your booking has been cancelled.")
         return redirect('cancel_success')
-    except Booking.DoesNotExist:
-        return HttpResponseNotFound("Invalid cancellation link.")
-    
+
 @staff_member_required
 def manage_bookings(request):
     bookings = Booking.objects.all().order_by('-date', '-time')

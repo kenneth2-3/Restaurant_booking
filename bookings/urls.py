@@ -8,6 +8,6 @@ urlpatterns = [
     path("success/<uuid:token>/", views.booking_success, name="booking_success"),
     path('my-bookings/', views.my_bookings, name='my_bookings'),
     path('manage-bookings/', views.manage_bookings, name='manage_bookings'),
-    path('cancel/<uuid:token>/', cancel_booking, name='cancel_booking'),
+    path('cancel/<uuid:token>/', views.cancel_booking, name='cancel_booking'),
     path('cancelled/', lambda r: render(r, 'bookings/cancel_success.html'), name='cancel_success'),
 ]
