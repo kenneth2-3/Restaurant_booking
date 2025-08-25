@@ -28,7 +28,7 @@
                             {% endif %}
                         </td>
                         <td>
-                            {% if not booking.is_cancelled %}
+                            {% if not booking.canceled %}
                                 <a href="{% url 'cancel_booking' booking.cancel_token %}" class="btn btn-danger btn-sm">Cancel</a>
                             {% else %}
                                 <span class="text-muted">-</span>

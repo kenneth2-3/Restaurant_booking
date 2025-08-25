@@ -33,10 +33,10 @@ def my_bookings(request):
 @login_required
 def cancel_booking(request, token):
         booking = get_object_or_404(Booking, cancel_token=token, user=request.user)
-        if booking.is_cancelled:
+        if booking.canceled:
             messages.warning(request, "This booking was already cancelled.")
         else:
-            booking.is_cancelled = True
+            booking.canceled = True
             booking.save()
             messages.success(request, "Your booking has been cancelled.")
         return redirect('cancel_success')
