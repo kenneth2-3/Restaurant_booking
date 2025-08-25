@@ -1,7 +1,7 @@
 from django import forms
 from .models import Booking
 from django.utils import timezone
-from datetime import date as dt_date
+from datetime import date as dt_date, datetime
 
 class BookingForm(forms.ModelForm):
     class Meta:
@@ -9,31 +9,55 @@ class BookingForm(forms.ModelForm):
         fields = ['name', 'email', 'date', 'time', 'guests']
         widgets = {
             'date': forms.DateInput(attrs={'type': 'date'}),
-            'time': forms.TimeInput(attrs={'type': 'time'}),
+            'time': forms.Select(),  # Use select dropdown for time slots
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        # Frontend: block past dates
+        today = timezone.localdate()
+        self.fields['date'].widget.attrs['min'] = today.strftime('%Y-%m-%d')
+
+        # Frontend: dynamically disable past time slots for today
+        now_time = timezone.localtime().time()
+        time_choices = []
+        for idx, label in Booking.TIME_PERIODS:
+            slot_start = datetime.strptime(label.split('-')[0], "%H:%M").time()
+            if self.initial.get('date') == today:
+                # Only include future slots
+                if slot_start >= now_time:
+                    time_choices.append((idx, label))
+            else:
+                time_choices.append((idx, label))
+        self.fields['time'].choices = time_choices
 
     def clean(self):
         cleaned_data = super().clean()
         date = cleaned_data.get('date')
         time = cleaned_data.get('time')
-        guests = cleaned_data.get('guests')
 
-        # to prevent picking past dates
+        # Server-side: prevent past dates
         if date and date < dt_date.today():
             self.add_error('date', "You cannot select a past date.")
 
-        # to prevent duplicate bookings
-        if Booking.objects.filter(date=date, time=time).exists():
+        # Server-side: prevent past time for today
+        if date == dt_date.today() and time is not None:
+            slot_label = dict(Booking.TIME_PERIODS)[time]
+            slot_start = datetime.strptime(slot_label.split('-')[0], "%H:%M").time()
+            if slot_start < timezone.localtime().time():
+                self.add_error('time', "You cannot select a past time today.")
+
+        # Server-side: prevent duplicate bookings
+        if date and time and Booking.objects.filter(date=date, time=time).exclude(pk=self.instance.pk).exists():
             raise forms.ValidationError("Sorry, a booking already exists for that time.")
 
+        return cleaned_data
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        # Frontend restriction: block past dates
-        today = timezone.localdate()  # Django's timezone-aware current date
-        self.fields['date'].widget.attrs['min'] = today.strftime('%Y-%m-%d')
-
-        # Set minimum time for today (frontend only)
-        now_time = timezone.localtime().strftime('%H:%M')
-        self.fields['time'].widget.attrs['min'] = now_time
+    def clean_guests(self):
+        guests = self.cleaned_data.get('guests')
+        if guests > 5:
+            raise forms.ValidationError("You can only book up to 5 guests per table.")
+        if guests < 1:
+            raise forms.ValidationError("You must book at least 1 guest.")
+        return guests

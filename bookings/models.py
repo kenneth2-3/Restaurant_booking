@@ -52,6 +52,12 @@ class Booking(models.Model):
             ).exclude(pk=self.pk).exists()
             if conflict:
                 raise ValidationError("This time slot is already booked. Please select another one.")
+            
+        # Guest limit validation
+        if self.guests > 5:
+            raise ValidationError("Maximum of 5 guests per table allowed.")
+        if self.guests < 1:
+            raise ValidationError("You must book at least 1 guest.")
 
     def __str__(self):
         return f"{self.name} - {self.date} {dict(self.TIME_PERIODS)[self.time]}"
