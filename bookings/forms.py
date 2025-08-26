@@ -9,23 +9,22 @@ class BookingForm(forms.ModelForm):
         fields = ['name', 'email', 'date', 'time', 'guests']
         widgets = {
             'date': forms.DateInput(attrs={'type': 'date'}),
-            'time': forms.Select(),  # Use select dropdown for time slots
+            'time': forms.Select(), 
         }
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        # Frontend: block past dates
+        # To block past dates
         today = timezone.localdate()
         self.fields['date'].widget.attrs['min'] = today.strftime('%Y-%m-%d')
 
-        # Frontend: dynamically disable past time slots for today
+        # To disable past time slots for today
         now_time = timezone.localtime().time()
         time_choices = []
         for idx, label in Booking.TIME_PERIODS:
             slot_start = datetime.strptime(label.split('-')[0], "%H:%M").time()
             if self.initial.get('date') == today:
-                # Only include future slots
                 if slot_start >= now_time:
                     time_choices.append((idx, label))
             else:
@@ -37,18 +36,18 @@ class BookingForm(forms.ModelForm):
         date = cleaned_data.get('date')
         time = cleaned_data.get('time')
 
-        # Server-side: prevent past dates
+        # To prevent past dates
         if date and date < dt_date.today():
             self.add_error('date', "You cannot select a past date.")
 
-        # Server-side: prevent past time for today
+        # To prevent past time for today
         if date == dt_date.today() and time is not None:
             slot_label = dict(Booking.TIME_PERIODS)[time]
             slot_start = datetime.strptime(slot_label.split('-')[0], "%H:%M").time()
             if slot_start < timezone.localtime().time():
                 self.add_error('time', "You cannot select a past time today.")
 
-        # Server-side: prevent duplicate bookings
+        # To prevent duplicate bookings
         if date and time and Booking.objects.filter(date=date, time=time).exclude(pk=self.instance.pk).exists():
             raise forms.ValidationError("Sorry, a booking already exists for that time.")
 

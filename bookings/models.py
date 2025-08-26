@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.core.exceptions import ValidationError
 import uuid
-import datetime
+from datetime import datetime
 from django.contrib.auth.models import User
 
 
@@ -32,34 +32,23 @@ class Booking(models.Model):
         unique_together = ('date', 'time')
 
     def clean(self):
-        today = datetime.date.today()
-        now = datetime.datetime.now().time()
+        today = timezone.localdate()
 
-        if self.date < today:
-            raise ValidationError("Booking date cannot be in the past")
+        # Block bookings for today or past dates
+        if self.date <= today:
+            raise ValidationError("Bookings cannot be made for today or past dates.")
 
-        if self.date == today:
-            slot_label = dict(self.TIME_PERIODS).get(self.time)
-            slot_start = datetime.datetime.strptime(slot_label.split("-")[0], "%H:%M").time()
-
-            if slot_start < now:
-                raise ValidationError("Booking time cannot be in the past")
-
-        # Checks if another booking exists for same date + time
+        # Check for slot conflicts
         if not self.canceled:
             conflict = Booking.objects.filter(
                 date=self.date, time=self.time, canceled=False
             ).exclude(pk=self.pk).exists()
             if conflict:
                 raise ValidationError("This time slot is already booked. Please select another one.")
-            
-        # Guest limit validation
-        if self.guests > 5:
-            raise ValidationError("Maximum of 5 guests per table allowed.")
-        if self.guests < 1:
-            raise ValidationError("You must book at least 1 guest.")
+
+        # Guest validation
+        if self.guests > 5 or self.guests < 1:
+            raise ValidationError("You can book between 1 and 5 guests per table.")
 
     def __str__(self):
         return f"{self.name} - {self.date} {dict(self.TIME_PERIODS)[self.time]}"
-
-
