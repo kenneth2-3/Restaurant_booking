@@ -140,4 +140,12 @@ Create a local copy of the GitHub repository by following one of the two process
   1. Run the following command
   - `git clone https://github.com/kenneth2-3/Restaurant_booking.git`
 
+## Credits
 
+- [GitHub](https://github.com/) for giving the idea of the project's design.
+- [Django](https://www.djangoproject.com/) for the framework.
+- [Heroku](https://www.heroku.com): for the free hosting of the website.
+- [Cloudinary](https://console.cloudinary.com/app/product-explorer): for the free access to the background images build tool.
+- [Font awesome](https://fontawesome.com/): for the free access to icons.
+- [jQuery](https://jquery.com/): for providing varieties of tools to make standard HTML code look appealing.
+- [Postgresql](https://www.postgresql.org/): for providing a free database.
