@@ -140,6 +140,8 @@ Create a local copy of the GitHub repository by following one of the two process
   1. Run the following command
   - `git clone https://github.com/kenneth2-3/Restaurant_booking.git`
 
+---
+
 ## Credits
 
 - [GitHub](https://github.com/) for giving the idea of the project's design.
@@ -149,3 +151,9 @@ Create a local copy of the GitHub repository by following one of the two process
 - [Font awesome](https://fontawesome.com/): for the free access to icons.
 - [jQuery](https://jquery.com/): for providing varieties of tools to make standard HTML code look appealing.
 - [Postgresql](https://www.postgresql.org/): for providing a free database.
+
+## Author
+
+Kenneth Adanma
+
+Thank you for exploring AYCE Resturant!
