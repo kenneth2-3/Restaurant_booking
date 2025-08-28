@@ -1,7 +1,9 @@
 # Restaurant_booking
 
 # AYCE Resturant Booking System
-Full-Stack Django Web Application for managing table reservations, menu display, and user bookings at a restaurant called AYCE.In here []() is the live link of the game.
+A **Full-Stack Django Web Application** for managing table reservations, menu display, and user bookings at a restaurant called AYCE.In here []() is the live link of the game.
+
+---
 
 ## Project Overview
 
@@ -17,6 +19,30 @@ AYCE Restaurant Booking System is designed to:
 - Provide user authentication and a “My Bookings” page.
 
 - Store media on Cloudinary for scalable management.
+
+---
+
+## User Stories
+
+### Customers
+1. As a customer, I want to **create an account** so that I can book tables online.  
+2. As a customer, I want to **log in securely** so that my bookings are tied to my account.  
+3. As a customer, I want to **book a table for 1–5 guests** so that I can dine with friends/family.  
+4. As a customer, I want to **choose a specific date and time slot** so that I know when my table is reserved.  
+5. As a customer, I want to be **prevented from booking in the past** so that I don’t accidentally make invalid bookings.  
+6. As a customer, I want to be **stopped from booking a slot that’s already taken** so that double bookings are avoided.  
+7. As a customer, I want to **view my bookings** so that I can check my upcoming reservations.  
+8. As a customer, I want to **cancel my bookings** so that I can free up a table if I change my mind.  
+9. As a customer, I want to **receive confirmation/notification messages** when I book or cancel so that I know my action was successful.  
+10. As a customer, I want to **view the restaurant menu with pictures and prices** so that I know what’s available before visiting.
+
+### Restaurant Staff/Admin
+1. As the site owner, I want to **log in as an admin/staff** so that I can manage the restaurant’s bookings.  
+2. As the site owner, I want to **see all bookings in one place** so that I can manage reservations efficiently.  
+3. As the site owner, I want to **cancel or adjust reservations** if necessary (e.g., emergencies, closing times).  
+4. As the site owner, I want to **manage the menu (add, update, delete items)** so that the website always reflects the current offerings.  
+5. As the site owner, I want to **store images externally (Cloudinary)** so that performance and storage are optimized.  
+6. As the site owner, I want to **display hero images and promotional banners** so that the site looks professional.  
 
 ---
 
@@ -68,8 +94,50 @@ AYCE Restaurant Booking System is designed to:
 
 - [Cloudinary](https://console.cloudinary.com/app/product-explorer): was used to make a background images for the website.
 
+-[Wireframes.cc](): was used to create the sketch for the website.
+
 - [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
 
 - [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
 
 - [PEP8](https://pep8.org/): was used to validate Python code for the website.
+
+## Wireframes
+
+- [Desktop Wireframes]()
+- [Tablet Wireframes]()
+- [Mobile Wireframes]()
+
+## File Structure
+
+## Testing
+
+Please refer to the [TESTING.md]() file for all test-related documentation.
+
+## Deployment
+
+- The program was deployed to [Heroku](https://dashboard.heroku.com/).
+- The program can be reached by the [Link]().
+
+### To deploy the project as an application that can be **run locally**:
+
+*Note:*
+  1. This project requires you to have Python installed on your local PC:
+  - `sudo apt install python3`
+
+  1. You will also need pip installed to allow the installation of modules the application uses.
+  - `sudo apt install python3-pip`
+
+Create a local copy of the GitHub repository by following one of the two processes below:
+
+- Download ZIP file:
+  1. Go to the [GitHub Repo page](https://github.com/kenneth2-3/Restaurant_booking).
+  1. Click the Code button and download the ZIP file containing the project.
+  1. Extract the ZIP file to a location on your PC.
+
+- Clone the repository:
+  1. Open a folder on your computer with the terminal.
+  1. Run the following command
+  - `git clone https://github.com/kenneth2-3/Restaurant_booking.git`
+
+
