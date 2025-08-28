@@ -19,7 +19,7 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4 sticky-top">
       <!-- Navbar content -->
       <div class="container">
         <a class="navbar-brand" href="#">AYCE</a>
@@ -49,7 +49,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="flex-shrink-0 main-bg">
+    <main class="flex-shrink-0">
         {% if user.is_authenticated %}
         <p class="text-end m-3">You are logged in as {{ user }}</p>
         {% else %}
@@ -59,17 +59,17 @@
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
-    </main>
+    </main> 
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">
           {% block copyright %}Copyright 2025 AYCE RESTAURANT{% endblock copyright %}
         </p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i>
+        <p class="m-0 text-center text-white">Follow us: <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square fa-2x ms-3"></i></a> 
+            <a href="https://x.com/" target="_blank"><i class="fab fa-twitter-square fa-2x ms-3"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square fa-2x ms-3"></i></a>
+            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube-square fa-2x ms-3"></i><a/>
         </p>
     </footer>
 

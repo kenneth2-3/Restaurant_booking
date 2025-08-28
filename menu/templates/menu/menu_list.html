@@ -25,12 +25,19 @@
         {% endfor %}
     </div>
 </div>
-{% comment %} 
+
 <style>
-.fixed-img {
-    height: 250px;       
-    object-fit: cover;  
-    width: 100%;
-}
-</style> {% endcomment %}
+    .fixed-img {
+        height: 250px;
+        object-fit: cover;
+        width: 100%;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .text-muted {
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
+</style>
 {% endblock %}
