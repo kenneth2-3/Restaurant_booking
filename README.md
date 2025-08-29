@@ -133,6 +133,33 @@ AYCE_RESTAURANT/
 
 ## Bugs
 
++ **Solved bugs**
+
+### 1. Cloudinary images not loading
+- **Bug:** Images uploaded via Cloudinary were not showing in templates.  
+- **Fix:** Installed `django-cloudinary-storage`, added Cloudinary configuration in `settings.py`, and updated template `img src` paths.
+
+### 2. Double booking allowed
+- **Bug:** Multiple users could book the same date and time.  
+- **Fix:** Added `unique_together = ('date', 'time')` in `Booking` model and validation in `clean()` to prevent conflicts.
+
+### 3. Past booking dates selectable
+- **Bug:** Users were able to select booking dates in the past.  
+- **Fix:** Added validation in `Booking.clean()` to raise an error if `self.date < today`.
+
+### 4. Guest number exceeded limit
+- **Bug:** Users could enter any number of guests (e.g., 100).  
+- **Fix:** Added validation to restrict `guests <= 5` with a clear error message.
+
+### 5. Login link not working
+- **Bug:** The Login button in the navbar was not linked.  
+- **Fix:** Connected it to `accounts:login` in `base.html` using Django `url` tag.
+
++ **Unsolved bugs**
+  - None
+
+---
+
 ## Testing
 
 Please refer to the [TESTING.md]() file for all test-related documentation.
