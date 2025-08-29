@@ -85,6 +85,35 @@ When running the tests, the sqlite database was used.
 
 *Needless to say, that the db.sqlite3 was not used during the development at all and the PostgreSQL database was used instead at the very beginning. And thus, db.sqlite3 **does not consist any sensitive information**. Sqlite3 is a file that is used for **testing purposes only**. It is not used in the production environment.*
 
+I set tests folder for each app separately, which consists test_forms.py, test_models.py, test_views.py and test_urls.py each. I also deleted the test.py files from the all apps.
+
+![Testing Folders](documentation)
+
+While developing tests I was running the following command:
+
+```
+python manage.py test <name of the app>
+```
+
+To create the coverage report, I ran the following command:
+
+```
+coverage run --source=<name of the app> manage.py test
+```
+```
+coverage report
+```
+To see the html version of the report, I ran the following command:
+
+```
+coverage html
+```
+```
+    python3 -m http.server
+```
+The link to the server will appear. Click the link to see the report and find out which parts of code has not been covered in testing.
+
+
 ---
 
 ## Validation

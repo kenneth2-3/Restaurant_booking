@@ -192,6 +192,42 @@ Create a local copy of the GitHub repository by following one of the two process
 
 ---
 
+1. Install the dependencies:
+
+    - Open the terminal window and type:
+    - `pip3 install -r requirements.txt`
+
+
+1. Create a `.gitignore` file in the root directory of the project where you should add env.py and __pycache__ files to prevent the privacy of your secret data.
+
+1. Create a `.env` file. This will contain the following environment variables:
+
+    ```python
+    import os
+
+      os.environ['SECRET_KEY'] = 'Add a secret key'
+      os.environ['DATABASE_URL'] = 'will be used to connect to the database'
+      os.environ['DEBUG'] = 'True'
+    ```
+
+    *During the development stage DEBUG is set to True, but it is vital to change it to False.*
+
+1. Run the following commands in a terminal to make migrations: 
+    - `python3 manage.py makemigrations`
+    - `python3 manage.py migrate`
+1. Create a superuser to get access to the admin environment.
+    - `python3 manage.py createsuperuser`
+    - Enter the required information (your username, email and password).
+1. Run the app with the following command in the terminal:
+    - `python3 manage.py runserver`
+1. Open the link provided in a browser to see the app.
+
+1. If you need to access the admin page:
+    - Add /admin/ to the link provided.
+    - Enter your username and password (for the superuser that you have created before).
+    - You will be redirected to the admin page.
+
+
 ## Credits
 
 - [GitHub](https://github.com/) for giving the idea of the project's design.
