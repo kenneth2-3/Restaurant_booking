@@ -1,7 +1,7 @@
 # Restaurant_booking
 
 # AYCE Resturant Booking System
-A **Full-Stack Django Web Application** for managing table reservations, menu display, and user bookings at a restaurant called AYCE.In here []() is the live link of the game.
+A **Full-Stack Django Web Application** for managing table reservations, menu display, and user bookings at a restaurant called AYCE.In here [Ayce Restaurant]() is the live link of the game.
 
 ---
 
@@ -50,23 +50,23 @@ AYCE Restaurant Booking System is designed to:
 
 ### Languages:
 
-- [Python]: the primary language used to develop the server-side of the website.
+- [Python](https://www.python.org/downloads/release/python-385/): the primary language used to develop the server-side of the website.
 
-- [JS]: the primary language used to develop interactive components of the website.
+- [JS](https://www.javascript.com/): the primary language used to develop interactive components of the website.
 
-- [HTML]: the markup language used to create the website.
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): the markup language used to create the website.
 
-- [CSS]: the styling language used to style the website.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/css): the styling language used to style the website.
 
 ### Frameworks and Libraries
 
-- [Django]: python framework used to create all the logic.
+- [Django](https://www.djangoproject.com/): python framework used to create all the logic.
 
 ### Databases:
 
-- [SQLite]: was used as a development database.
+- [SQLite](https://www.sqlite.org/): was used as a development database.
 
-- [PostgreSQL]: the database used to store all the data.
+- [PostgreSQL](https://www.postgresql.org/): the database used to store all the data.
 
 ### Other tools:
 
@@ -94,7 +94,7 @@ AYCE Restaurant Booking System is designed to:
 
 - [Cloudinary](https://console.cloudinary.com/app/product-explorer): was used to make a background images for the website.
 
--[Wireframes.cc](https://wireframe.cc/): was used to create the sketch for the website.
+- [Wireframes.cc](https://wireframe.cc/): was used to create the sketch for the website.
 
 - [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
 

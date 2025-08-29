@@ -66,8 +66,108 @@ However, I tried to solve the majority of them. And one of the bugs that I remem
 
 ### Django unit testing
 
-As there are four main apps in the project, we can test them separately.
+As there are three main apps in the project, we can test them separately.
 I knew at the very beginning that I had to implement automated testing. As I was highly concentrated on developing all functionality first, so I left testing to the end. While testing my work, I found several bugs related to the access limited to particular pages and functionality for different roles. In the future, I plan to implement testing and code simultaneously in order to increase my productivity.
 
 **Accounts App**
 
+![Accounts Testing]()
+
+**Bookings App**
+
+![Bookings Testing]()
+
+**Menu**
+
+![Menu Testing]()
+
+When running the tests, the sqlite database was used.
+
+*Needless to say, that the db.sqlite3 was not used during the development at all and the PostgreSQL database was used instead at the very beginning. And thus, db.sqlite3 **does not consist any sensitive information**. Sqlite3 is a file that is used for **testing purposes only**. It is not used in the production environment.*
+
+---
+
+## Validation
+
+### HTML Validation
+
+- [Full HTML Validation Report](documentation)
+
+- No errors or warnings were found when passing through the official [W3C](https://validator.w3.org/) validator. This checking was done manually by copying the view page source code and pasting it into the validator.
+
+
+### CSS Validation
+
+- [Full CSS Validation Report](documentation)
+
+- No errors or warnings were found when passing through the official [W3C (Jigsaw)](https://jigsaw.w3.org/css-validator/#validate_by_uri) validator, css code works perfectly on various devices.
+
+
+### Python Validation
+
+- [Full Python Validation Report]()
+
+- No errors were found when the code was passed through Valentin Bryukhanov's [online validation tool](http://pep8online.com/). According to the reports, the code is [Pep 8-compliant](https://legacy.python.org/dev/peps/pep-0008/). This checking was done manually by copying python code and pasting it into the validator.
+
+
+---
+
+## Lighthouse Report
+
+### Home Page
+
+![Lighthouse Report. Home Page]()
+
+### Menu Page
+
+![Lighthouse Report. Menu Page]()
+
+### Book Page
+
+![Lighthouse Report. Book Page]()
+
+### My Bookings Page
+
+![Lighthouse Report. My Bookings Page]()
+
+### Login Page
+
+![Lighthouse Report. Login Page]()
+
+### Logout Page
+
+![Lighthouse Report. Logout Page]()
+
+### Register Page
+
+![Lighthouse Report. Register Page]()
+
+
+---
+
+## Compatibility
+
+Testing was conducted on the following browsers;
+
+- Chrome
+
+[Compatibility Report]()
+
+- Firefox
+
+[Compatibility Report]()
+
+- Safari
+
+[Compatibility Report]()
+
+---
+
+### Responsiveness 
+
+- The websites responsiveness was checked manually by using devtools implemented in (Chrome) throughout the whole development. It was also checked with [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb/related?hl=en) Chrome extension.
+
+[Responsiveness Report]()
+
+
+---
