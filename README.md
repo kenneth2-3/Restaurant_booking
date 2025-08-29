@@ -94,7 +94,7 @@ AYCE Restaurant Booking System is designed to:
 
 - [Cloudinary](https://console.cloudinary.com/app/product-explorer): was used to make a background images for the website.
 
--[Wireframes.cc](): was used to create the sketch for the website.
+-[Wireframes.cc](https://wireframe.cc/): was used to create the sketch for the website.
 
 - [W3C Validator](https://validator.w3.org/): was used to validate HTML5 code for the website.
 
@@ -109,6 +109,29 @@ AYCE Restaurant Booking System is designed to:
 - [Mobile Wireframes]()
 
 ## File Structure
+
+```
+AYCE_RESTAURANT/
+├── accounts/           # User auth app
+├── bookings/           # Table booking app
+├── menu/               # Menu app
+├── templates/          # HTML templates
+├── static/             # CSS, JS, images
+├── ayce/               # Django project settings
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   ├── asgi.py
+│   └── env.py          # Local environment variables
+├── manage.py
+├── Procfile            # For Heroku deployment
+├── requirements.txt
+├── README.md           # Project documentation
+└── TESTING.md          # Manual + automated test documentation
+```
+
+## Bugs
 
 ## Testing
 
