@@ -87,7 +87,7 @@ When running the tests, the sqlite database was used.
 
 I set tests folder for each app separately, which consists test_forms.py, test_models.py, test_views.py and test_urls.py each. I also deleted the test.py files from the all apps.
 
-![Testing Folders](documentation)
+![Testing Folders](documentation/test_files.png)
 
 While developing tests I was running the following command:
 
@@ -120,14 +120,14 @@ The link to the server will appear. Click the link to see the report and find ou
 
 ### HTML Validation
 
-- [Full HTML Validation Report](documentation)
+- [Full HTML Validation Report](documentation/test_home.html.png)
 
 - No errors or warnings were found when passing through the official [W3C](https://validator.w3.org/) validator. This checking was done manually by copying the view page source code and pasting it into the validator.
 
 
 ### CSS Validation
 
-- [Full CSS Validation Report](documentation)
+- [Full CSS Validation Report](documentation/test_css.png)
 
 - No errors or warnings were found when passing through the official [W3C (Jigsaw)](https://jigsaw.w3.org/css-validator/#validate_by_uri) validator, css code works perfectly on various devices.
 
