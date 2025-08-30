@@ -120,14 +120,14 @@ The link to the server will appear. Click the link to see the report and find ou
 
 ### HTML Validation
 
-- [Full HTML Validation Report](documentation/test_home.html.png)
+- [Full HTML Validation Report](documentation/validation/home.html_validation.png)
 
 - No errors or warnings were found when passing through the official [W3C](https://validator.w3.org/) validator. This checking was done manually by copying the view page source code and pasting it into the validator.
 
 
 ### CSS Validation
 
-- [Full CSS Validation Report](documentation/test_css.png)
+- [Full CSS Validation Report](documentation/validation/css_validation.png)
 
 - No errors or warnings were found when passing through the official [W3C (Jigsaw)](https://jigsaw.w3.org/css-validator/#validate_by_uri) validator, css code works perfectly on various devices.
 
@@ -136,7 +136,7 @@ The link to the server will appear. Click the link to see the report and find ou
 
 - [Full Python Validation Report]()
 
-- No errors were found when the code was passed through Valentin Bryukhanov's [online validation tool](http://pep8online.com/). According to the reports, the code is [Pep 8-compliant](https://legacy.python.org/dev/peps/pep-0008/). This checking was done manually by copying python code and pasting it into the validator.
+- No errors were found when the code was passed through code institutes python linter [online validation tool](https://pep8ci.herokuapp.com/).This checking was done manually by copying python code and pasting it into the validator.
 
 
 ---
@@ -145,15 +145,15 @@ The link to the server will appear. Click the link to see the report and find ou
 
 ### Home Page
 
-![Lighthouse Report. Home Page]()
+![Lighthouse Report. Home Page](documentation/lighthouse_reports/lighthouse_home.png)
 
 ### Menu Page
 
-![Lighthouse Report. Menu Page]()
+![Lighthouse Report. Menu Page](documentation/lighthouse_reports/lighthouse_menu.png)
 
 ### Book Page
 
-![Lighthouse Report. Book Page]()
+![Lighthouse Report. Book Page](documentation/lighthouse_reports/lighthouse_book.png)
 
 ### My Bookings Page
 
@@ -161,15 +161,15 @@ The link to the server will appear. Click the link to see the report and find ou
 
 ### Login Page
 
-![Lighthouse Report. Login Page]()
+![Lighthouse Report. Login Page](documentation/lighthouse_reports/lighthouse_login.png)
 
 ### Logout Page
 
-![Lighthouse Report. Logout Page]()
+![Lighthouse Report. Logout Page](documentation/lighthouse_reports/lighthouse_logout.png)
 
 ### Register Page
 
-![Lighthouse Report. Register Page]()
+![Lighthouse Report. Register Page](documentation/lighthouse_reports/lighthouse_register.png)
 
 
 ---
