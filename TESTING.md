@@ -62,7 +62,6 @@ However, I tried to solve the majority of them. And one of the bugs that I remem
 
 ---
 
-## Automated testing
 
 ### Django unit testing
 
