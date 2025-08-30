@@ -208,7 +208,34 @@ Testing was conducted on the following browsers;
 
 - The websites responsiveness was checked manually by using devtools implemented in (Chrome) throughout the whole development. It was also checked with [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb/related?hl=en) Chrome extension.
 
-[Responsiveness Report]()
+- Home Page
+
+   - [Responsiveness Report](documentation/responsiveness_reports/responsive_home.png)
+   - [Responsiveness Report](documentation/responsiveness_reports/reponsive_home_largescreen.png)
+   - [Responsiveness Report](documentation/responsiveness_reports/responsive_home_aboutus.png)
+   - [Responsiveness Report](documentation/responsiveness_reports/responsive_home_aboutus_lg.png)
+    - [Responsiveness Report](documentation/responsiveness_reports/responsive_home_footer.png)
+    - [Responsiveness Report](documentation/responsiveness_reports/responsive_footer_lg.png)
+
+- Menu Page
+
+   - [Responsiveness Report](documentation/responsiveness_reports/responsive_menu.png)
+   - [Responsiveness Report](documentation/responsiveness_reports/responsive_menu_lg.png)
+
+- Book Page
+
+   - [Responsiveness Report](documentation/responsiveness_reports/responsive_book.png)
+   - [Responsiveness Report](documentation/responsiveness_reports/responsive_book_lg.png)
+
+- Login Page
+
+   - [Responsiveness Report](documentation/responsiveness_reports/reponsive_login.png)
+   - [Responsiveness Report](documentation/responsiveness_reports/responsive_login_lg.png)
+
+- Register Page
+
+   - [Responsiveness Report](documentation/responsiveness_reports/responsive_register.png)
+   - [Responsiveness Report](documentation/responsiveness_reports/responsive_register_lg.png)
 
 
 ---
