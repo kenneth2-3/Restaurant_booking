@@ -180,27 +180,27 @@ Testing was conducted on the following browsers;
 
 - Chrome
 
-[Compatibility Report](documentation/compatibility_reports/compatibility_chrome_home.png)
-[Compatibility Report](documentation/compatibility_reports/compatibility_chrome_menu.png)
-[Compatibility Report](documentation/compatibility_reports/compatibility_chrome_book.png)
-[Compatibility Report](documentation/compatibility_reports/compatibilty_chrome_login.png)
-[Compatibility Report](documentation/compatibility_reports/compatibility_chrome_register.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibility_chrome_home.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibility_chrome_menu.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibility_chrome_book.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibilty_chrome_login.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibility_chrome_register.png)
 
 - Firefox
 
-[Compatibility Report](documentation/compatibility_reports/compatibility_firefox_home.png)
-[Compatibility Report](documentation/compatibility_reports/compatibility_firefox_menu.png)
-[Compatibility Report](documentation/compatibility_reports/compatibility_firefox_book.png)
-[Compatibility Report](documentation/compatibility_reports/compatibility_firefox_login.png)
-[Compatibility Report](documentation/compatibility_reports/compatibility_firefox_register.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibility_firefox_home.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibility_firefox_menu.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibility_firefox_book.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibility_firefox_login.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibility_firefox_register.png)
 
 - Safari
 
-[Compatibility Report](documentation/compatibility_reports/compatibility_safari_home.png)
-[Compatibility Report](documentation/compatibility_reports/comaptibility_safari_menu.png)
-[Compatibility Report](documentation/compatibility_reports/compatibility_safari_book.png)
-[Compatibility Report](documentation/compatibility_reports/compatibility_safari_login.png)
-[Compatibility Report](documentation/compatibility_reports/compatibility_safari_register.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibility_safari_home.png)
+   - [Compatibility Report](documentation/compatibility_reports/comaptibility_safari_menu.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibility_safari_book.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibility_safari_login.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibility_safari_register.png)
 
 ---
 
