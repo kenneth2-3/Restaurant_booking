@@ -180,7 +180,7 @@ Testing was conducted on the following browsers;
 
 - Chrome
 
-[Compatibility Report]()
+[Compatibility Report](documentation/compatibility_reports/compatibility_chrome/)
 
 - Firefox
 
