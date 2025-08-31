@@ -25,7 +25,6 @@ class Booking(models.Model):
     time = models.IntegerField(choices=TIME_PERIODS, default=0)
     guests = models.PositiveIntegerField()
     canceled = models.BooleanField(default=False)
-    cancel_token = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -47,8 +46,12 @@ class Booking(models.Model):
                 raise ValidationError("This time slot is already booked. Please select another one.")
 
         # Guest validation
-        if self.guests > 5 or self.guests < 1:
-            raise ValidationError("You can book between 1 and 5 guests per table.")
+        if self.guests is None: 
+            raise ValidationError("Number of guests is required.")
+        if self.guests > 5:
+            raise ValidationError("Maximum of 5 guests per table allowed.")
+        if self.guests < 1:
+            raise ValidationError("You must book at least 1 guest.")
 
     def __str__(self):
         return f"{self.name} - {self.date} {dict(self.TIME_PERIODS)[self.time]}"

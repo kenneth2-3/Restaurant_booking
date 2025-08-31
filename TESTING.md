@@ -63,77 +63,25 @@ However, I tried to solve the majority of them. And one of the bugs that I remem
 ---
 
 
-### Django unit testing
-
-As there are three main apps in the project, we can test them separately.
-I knew at the very beginning that I had to implement automated testing. As I was highly concentrated on developing all functionality first, so I left testing to the end. While testing my work, I found several bugs related to the access limited to particular pages and functionality for different roles. In the future, I plan to implement testing and code simultaneously in order to increase my productivity.
-
-**Accounts App**
-
-![Accounts Testing]()
-
-**Bookings App**
-
-![Bookings Testing]()
-
-**Menu**
-
-![Menu Testing]()
-
-When running the tests, the sqlite database was used.
-
-*Needless to say, that the db.sqlite3 was not used during the development at all and the PostgreSQL database was used instead at the very beginning. And thus, db.sqlite3 **does not consist any sensitive information**. Sqlite3 is a file that is used for **testing purposes only**. It is not used in the production environment.*
-
-I set tests folder for each app separately, which consists test_forms.py, test_models.py, test_views.py and test_urls.py each. I also deleted the test.py files from the all apps.
-
-![Testing Folders](documentation/test_files.png)
-
-While developing tests I was running the following command:
-
-```
-python manage.py test <name of the app>
-```
-
-To create the coverage report, I ran the following command:
-
-```
-coverage run --source=<name of the app> manage.py test
-```
-```
-coverage report
-```
-To see the html version of the report, I ran the following command:
-
-```
-coverage html
-```
-```
-    python3 -m http.server
-```
-The link to the server will appear. Click the link to see the report and find out which parts of code has not been covered in testing.
-
-
----
-
 ## Validation
 
 ### HTML Validation
 
-- [Full HTML Validation Report](documentation/validation/home.html_validation.png)
+- [HTML Validation Report](documentation/validation/home.html_validation.png)
 
 - No errors or warnings were found when passing through the official [W3C](https://validator.w3.org/) validator. This checking was done manually by copying the view page source code and pasting it into the validator.
 
 
 ### CSS Validation
 
-- [Full CSS Validation Report](documentation/validation/css_validation.png)
+- [CSS Validation Report](documentation/validation/css_validation.png)
 
 - No errors or warnings were found when passing through the official [W3C (Jigsaw)](https://jigsaw.w3.org/css-validator/#validate_by_uri) validator, css code works perfectly on various devices.
 
 
 ### Python Validation
 
-- [Full Python Validation Report]()
+- [Python Validation Report]()
 
 - No errors were found when the code was passed through code institutes python linter [online validation tool](https://pep8ci.herokuapp.com/).This checking was done manually by copying python code and pasting it into the validator.
 
@@ -156,7 +104,7 @@ The link to the server will appear. Click the link to see the report and find ou
 
 ### My Bookings Page
 
-![Lighthouse Report. My Bookings Page]()
+![Lighthouse Report. My Bookings Page](documentation/lighthouse_reports/lighthouse_mybookings.png)
 
 ### Login Page
 
@@ -166,10 +114,9 @@ The link to the server will appear. Click the link to see the report and find ou
 
 ![Lighthouse Report. Logout Page](documentation/lighthouse_reports/lighthouse_logout.png)
 
-### Register Page
+### Sign Up Page
 
-![Lighthouse Report. Register Page](documentation/lighthouse_reports/lighthouse_register.png)
-
+![Lighthouse Report. Register Page](documentation/lighthouse_reports/)
 
 ---
 

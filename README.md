@@ -102,12 +102,6 @@ AYCE Restaurant Booking System is designed to:
 
 - [PEP8](https://pep8.org/): was used to validate Python code for the website.
 
-## Wireframes
-
-- [Desktop Wireframes]()
-- [Tablet Wireframes]()
-- [Mobile Wireframes]()
-
 ## File Structure
 
 ```

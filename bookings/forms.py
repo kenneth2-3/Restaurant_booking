@@ -2,6 +2,7 @@ from django import forms
 from .models import Booking
 from django.utils import timezone
 
+
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
@@ -31,11 +32,3 @@ class BookingForm(forms.ModelForm):
             if Booking.objects.filter(date=date, time=time).exclude(pk=self.instance.pk).exists():
                 raise forms.ValidationError("Sorry, a booking already exists for that time.")
         return cleaned_data
-
-    def clean_guests(self):
-        guests = self.cleaned_data.get('guests')
-        if guests > 5:
-            raise forms.ValidationError("You can only book up to 5 guests per table.")
-        if guests < 1:
-            raise forms.ValidationError("You must book at least 1 guest.")
-        return guests
