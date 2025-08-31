@@ -10,32 +10,30 @@ Testing was done throughout site development, for each feature before it was mer
 Usability was tested with the below user acceptance testing, sent to new users to ensure testing from different users, on different devices and browsers to ensure issues were caught and where possible fixed during development.
 
 
-| Feature    | User Action | Expected Result | Y/N | Comments |
-|------------|-------------|-----------------|-----|----------|
-| **Register** | Click on the **Register** link in the navbar | Redirected to Register page | Y | |
-|            | Fill in valid username, password, and confirm password | Form accepts input | Y | |
-|            | Submit Register form | User account created, redirected to login page with success message | Y | |
-|            | Passwords do not match | Error message displayed | Y | |
-|            | Leave a field blank | Error message displayed | Y | |
-| **Login** | Click on the **Login** link in the navbar | Redirected to Login page | Y | |
-|            | Enter valid credentials | Redirected to homepage | Y | |
-|            | Enter invalid credentials | Error message displayed | Y | |
-Feature |
-| **Logout** | Click **Logout** in the navbar | User logged out, redirected to home page with a success message | Y | |
-|            | Click back button after logout | Still logged out | Y | |
-| **Bookings** | Click on **Book a Table** | Redirected to booking form | Y | |
-|             | Choose past date | Not allowed, error message shown | Y | |
-|             | Choose today/future date | Booking accepted | Y | |
-|             | Cancel an existing booking | Booking removed, success message shown | Y | |
-|             | Attempt to cancel a non-existent booking | Error handled gracefully | Y | |
-| **Menu**    | Click **Menu** in navbar | Redirected to menu page | Y | |
-|             | Menu images load from Cloudinary | Correct images displayed | Y | |
-Feature |
-| **UI/UX**   | Navbar visible on all pages | Correct navigation links displayed | Y | |
-|             | Background color is `#353537` | Consistent styling across all pages | Y | |
-|             | Forms styled for usability | Clean, modern design | Y | |
+| Feature           | User Action | Expected Result | Y/N | Comments |
+|------------------|-------------|----------------|-----|----------|
+| **Sign Up**       | Click on the **Sign Up** link in the navbar | Redirected to Sign Up page | Y | |
+|                   | Fill in valid username, password, and confirm password | Form accepts input | Y | |
+|                   | Submit Sign Up form | User account created, redirected to login page with success message | Y | |
+|                   | Passwords do not match | Error message displayed | Y | |
+|                   | Leave a field blank | Error message displayed | Y | |
+| **Login**         | Click on the **Login** link in the navbar | Redirected to Login page | Y | |
+|                   | Enter valid credentials | Redirected to homepage | Y | |
+|                   | Enter invalid credentials | Error message displayed | Y | |
+| **Logout**        | Click **Logout** in the navbar | User logged out, redirected to home page with a success message | Y | |
+|                   | Click back button after logout | Still logged out | Y | |
+| **Bookings**      | Click on **Book a Table** | Redirected to booking form | Y | |
+|                   | Choose past date | Not allowed, error message shown | Y | |
+|                   | Choose today/future date | Booking accepted | Y | |
+|                   | Cancel an existing booking | Booking removed, success message shown | Y | |
+|                   | Attempt to cancel a non-existent booking | Error handled gracefully | Y | |
+| **Menu**          | Click **Menu** in navbar | Redirected to menu page | Y | |
+|                   | Menu images load from Cloudinary | Correct images displayed | Y | |
+| **UI/UX**         | Navbar visible on all pages | Correct navigation links displayed | Y | |
+|                   | Background color is `#353537` | Consistent styling across all pages | Y | |
+|                   | Forms styled for usability | Clean, modern design | Y | |
 | **Errors/Validation** | Invalid form submissions | Error messages shown | Y | |
-|             | Server error | Custom error page shown | Y | |
+|                   | Server error | Custom error page shown | Y | |
 
 
 ---
@@ -116,7 +114,7 @@ However, I tried to solve the majority of them. And one of the bugs that I remem
 
 ### Sign Up Page
 
-![Lighthouse Report. Register Page](documentation/lighthouse_reports/)
+![Lighthouse Report. Register Page](documentation/lighthouse_reports/lighthouse_signup.png)
 
 ---
 
@@ -143,7 +141,7 @@ Testing was conducted on the following browsers;
 - Safari
 
    - [Compatibility Report](documentation/compatibility_reports/compatibility_safari_home.png)
-   - [Compatibility Report](documentation/compatibility_reports/comaptibility_safari_menu.png)
+   - [Compatibility Report](documentation/compatibility_reports/compatibility_safari_menu.png)
    - [Compatibility Report](documentation/compatibility_reports/compatibility_safari_book.png)
    - [Compatibility Report](documentation/compatibility_reports/compatibility_safari_login.png)
    - [Compatibility Report](documentation/compatibility_reports/compatibility_safari_register.png)
@@ -157,7 +155,7 @@ Testing was conducted on the following browsers;
 - Home Page
 
    - [Responsiveness Report](documentation/responsiveness_reports/responsive_home.png)
-   - [Responsiveness Report](documentation/responsiveness_reports/reponsive_home_largescreen.png)
+   - [Responsiveness Report](documentation/responsiveness_reports/responsive_home_largescreen.png)
    - [Responsiveness Report](documentation/responsiveness_reports/responsive_home_aboutus.png)
    - [Responsiveness Report](documentation/responsiveness_reports/responsive_home_aboutus_lg.png)
     - [Responsiveness Report](documentation/responsiveness_reports/responsive_home_footer.png)
@@ -175,13 +173,13 @@ Testing was conducted on the following browsers;
 
 - Login Page
 
-   - [Responsiveness Report](documentation/responsiveness_reports/reponsive_login.png)
+   - [Responsiveness Report](documentation/responsiveness_reports/responsive_login.png)
    - [Responsiveness Report](documentation/responsiveness_reports/responsive_login_lg.png)
 
-- Register Page
+- Sign Up Page
 
-   - [Responsiveness Report](documentation/responsiveness_reports/responsive_register.png)
-   - [Responsiveness Report](documentation/responsiveness_reports/responsive_register_lg.png)
+   - [Responsiveness Report](documentation/responsiveness_reports/responsive_signup.png)
+   - [Responsiveness Report](documentation/responsiveness_reports/responsive_signup_lg.png)
 
 
 ---

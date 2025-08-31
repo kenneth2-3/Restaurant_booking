@@ -106,10 +106,13 @@ AYCE Restaurant Booking System is designed to:
 
 ```
 AYCE_RESTAURANT/
-├── accounts/           # User auth app
 ├── bookings/           # Table booking app
 ├── menu/               # Menu app
 ├── templates/          # HTML templates
+│   ├── accounts/  
+│   │   ├── login.html
+│   │   ├── signup.html
+│   │   └── logout.html
 ├── static/             # CSS, JS, images
 ├── ayce/               # Django project settings
 │   ├── __init__.py
