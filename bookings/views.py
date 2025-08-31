@@ -15,10 +15,13 @@ def book_table(request):
             booking = form.save(commit=False)
             booking.user = request.user
             booking.save()
-            return render(request, 'bookings/booking_success.html', {'token': booking.cancel_token})
+            messages.success(request, "Your booking was successful!")
+            return redirect('my_bookings')
+        else:
+            messages.error(request, "There was an error with your booking. Please correct the form below.")
     else:
         form = BookingForm()
-    
+
     return render(request, 'bookings/book_table.html', {'form': form})
 
 @login_required
@@ -31,15 +34,15 @@ def my_bookings(request):
     return render(request, 'bookings/my_bookings.html', {'bookings': bookings})
 
 @login_required
-def cancel_booking(request, token):
-        booking = get_object_or_404(Booking, cancel_token=token, user=request.user)
-        if booking.canceled:
-            messages.warning(request, "This booking was already cancelled.")
-        else:
-            booking.canceled = True
-            booking.save()
-            messages.success(request, "Your booking has been cancelled.")
-        return redirect('cancel_success')
+def cancel_booking(request, pk):
+    booking = get_object_or_404(Booking, pk=pk, user=request.user)
+    if booking.canceled:
+        messages.warning(request, "This booking was already cancelled.")
+    else:
+        booking.canceled = True
+        booking.save()
+        messages.success(request, "Your booking has been cancelled.")
+    return redirect('my_bookings')
 
 @staff_member_required
 def manage_bookings(request):
