@@ -7,7 +7,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-@login_required
+@login_required(login_url='account_login')
 def book_table(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
