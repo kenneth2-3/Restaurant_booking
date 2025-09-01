@@ -6,6 +6,7 @@ from .models import Booking
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 @login_required(login_url='account_login')
 def book_table(request):
@@ -18,20 +19,23 @@ def book_table(request):
             messages.success(request, "Your booking was successful!")
             return redirect('my_bookings')
         else:
-            messages.error(request, "There was an error with your booking. Please correct the form below.")
+            messages.error(request, "There was an error with your booking.""Please correct the form below.")
     else:
         form = BookingForm()
 
     return render(request, 'bookings/book_table.html', {'form': form})
 
+
 @login_required
 def booking_success(request, token):
     return render(request, "bookings/booking_success.html", {"token": token})
+
 
 @login_required
 def my_bookings(request):
     bookings = request.user.bookings.all().order_by('-date', '-time')
     return render(request, 'bookings/my_bookings.html', {'bookings': bookings})
+
 
 @login_required
 def cancel_booking(request, pk):
@@ -44,10 +48,12 @@ def cancel_booking(request, pk):
         messages.success(request, "Your booking has been cancelled.")
     return redirect('my_bookings')
 
+
 @staff_member_required
 def manage_bookings(request):
     bookings = Booking.objects.all().order_by('-date', '-time')
-    return render(request, 'bookings/manage_bookings.html', {'bookings': bookings})
+    return render(request, 'bookings/manage_bookings.html',{'bookings': bookings})
+
 
 @staff_member_required
 def cancel_booking_admin(request, booking_id):

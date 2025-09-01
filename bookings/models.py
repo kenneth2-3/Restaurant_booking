@@ -46,7 +46,7 @@ class Booking(models.Model):
                 raise ValidationError("This time slot is already booked. Please select another one.")
 
         # Guest validation
-        if self.guests is None: 
+        if self.guests is None:
             raise ValidationError("Number of guests is required.")
         if self.guests > 5:
             raise ValidationError("Maximum of 5 guests per table allowed.")
