@@ -1,7 +1,7 @@
 # Restaurant_booking
 
 # AYCE Resturant Booking System
-A **Full-Stack Django Web Application** for managing table reservations, menu display, and user bookings at a restaurant called AYCE.In here [Ayce Restaurant]() is the live link of the game.
+A **Full-Stack Django Web Application** for managing table reservations, menu display, and user bookings at a restaurant called AYCE.In here [Ayce Restaurant]() is the live link of the restaurant.
 
 ---
 
