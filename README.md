@@ -174,11 +174,7 @@ Please refer to the [TESTING.md](TESTING.md) file for all test-related documenta
 ## Deployment
 
 - The program was deployed to [Heroku](https://dashboard.heroku.com/).
-<<<<<<< HEAD
-- The program can be reached by the [Link]().
-=======
 - The program can be reached by the [Link](https://ayce-restaurant-61dfc0b944b3.herokuapp.com/).
->>>>>>> 591c0fc (Added images to the documentation folder)
 
 ### To deploy the project as an application that can be **run locally**:
 
