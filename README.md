@@ -137,6 +137,16 @@ AYCE_RESTAURANT/
 - [Desktop Menupage Wireframe](documentation/desktop_menu_page.png)
 - [Desktop Bookingspage Wireframe](documentation/desktop_booking_page.png)
 
+### Tablet
+- [Tablets Homepage Wireframe](documentation/tablet_home_page.png)
+- [Tablets Menupage Wireframe](documentation/tablet_menu_page.png)
+- [Tablets Bookingspage Wireframe](documentation/tablet_booking_page.png)
+
+### Mobile
+- [Mobile Homepage Wireframe](documentation/mobile_home_page.png)
+- [Mobile Menupage Wireframe](documentation/mobile_menu_page.png)
+- [Mobile Bookingspage Wireframe](documentation/mobile_booking_page.png)
+
 
 ## Bugs
 
@@ -249,8 +259,4 @@ Create a local copy of the GitHub repository by following one of the two process
 
 Kenneth Adanma
 
-<<<<<<< HEAD
 Thank you for exploring AYCE Resturant!
-=======
-Thank you for exploring AYCE Resturant!
->>>>>>> 591c0fc (Added images to the documentation folder)
