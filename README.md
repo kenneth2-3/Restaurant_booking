@@ -1,7 +1,7 @@
 # Restaurant_booking
 
 # AYCE Resturant Booking System
-A **Full-Stack Django Web Application** for managing table reservations, menu display, and user bookings at a restaurant called AYCE.In here [Ayce Restaurant]() is the live link of the restaurant.
+A **Full-Stack Django Web Application** for managing table reservations, menu display, and user bookings at a restaurant called AYCE.In here [Ayce Restaurant](https://ayce-restaurant-61dfc0b944b3.herokuapp.com/) is the live link of the restaurant.
 
 ---
 
@@ -164,7 +164,11 @@ Please refer to the [TESTING.md](TESTING.md) file for all test-related documenta
 ## Deployment
 
 - The program was deployed to [Heroku](https://dashboard.heroku.com/).
+<<<<<<< HEAD
 - The program can be reached by the [Link]().
+=======
+- The program can be reached by the [Link](https://ayce-restaurant-61dfc0b944b3.herokuapp.com/).
+>>>>>>> 591c0fc (Added images to the documentation folder)
 
 ### To deploy the project as an application that can be **run locally**:
 
@@ -239,4 +243,8 @@ Create a local copy of the GitHub repository by following one of the two process
 
 Kenneth Adanma
 
+<<<<<<< HEAD
 Thank you for exploring AYCE Resturant!
+=======
+Thank you for exploring AYCE Resturant!
+>>>>>>> 591c0fc (Added images to the documentation folder)
