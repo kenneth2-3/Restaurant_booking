@@ -3,6 +3,7 @@ from .forms import BookingForm
 from django.http import HttpResponseNotFound
 from django.contrib import messages
 from .models import Booking
+from datetime import date
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 
@@ -54,6 +55,36 @@ def delete_booking(request, booking_id):
     booking.delete()
     messages.success(request, "Booking deleted successfully.")
     return redirect('my_bookings')
+
+@login_required
+def edit_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+
+    if request.method == "POST":
+        new_date = request.POST.get("date")
+        new_time = request.POST.get("time")
+        new_guests = request.POST.get("guests")
+
+        if new_date < str(date.today()):
+            messages.error(request, "You cannot select a past date.")
+            return redirect("edit_booking", booking_id=booking.id)
+
+        booking.date = new_date
+        booking.time = new_time
+        booking.guests = new_guests
+        booking.save()
+
+        messages.success(request, "Booking updated successfully.")
+        return redirect("my_bookings")
+
+    return render(
+        request,
+        "bookings/edit_booking.html",
+        {
+            "booking": booking,
+            "today": date.today()
+        }
+    )
 
 
 @staff_member_required

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5 text-white">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <h2 class="mb-4 text-center">Edit Booking</h2>
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label>Date</label>
+                    <input type="date" name="date" class="form-control"
+                        value="{{ booking.date|date:'Y-m-d' }}" required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Time</label>
+                    <select name="time" class="form-select" required>
+                        {% for value, label in booking.TIME_PERIODS %}
+                            <option value="{{ value }}"
+                                {% if booking.time == value %}selected{% endif %}>
+                                {{ label }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label>Guests</label>
+                    <input type="number" name="guests" class="form-control"
+                        value="{{ booking.guests }}" min="1" required>
+                </div>
+
+                <button type="submit" class="btn btn-success">Update Booking</button>
+                <a href="{% url 'my_bookings' %}" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
