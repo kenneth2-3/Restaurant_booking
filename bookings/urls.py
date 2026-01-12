@@ -10,4 +10,5 @@ urlpatterns = [
     path('manage-bookings/', views.manage_bookings, name='manage_bookings'),
     path('cancel/<int:pk>/', views.cancel_booking, name='cancel_booking'),
     path('cancelled/', lambda r: render(r, 'bookings/cancel_success.html'), name='cancel_success'),
+    path('delete/<int:booking_id>/', views.delete_booking, name='delete_booking'),
 ]

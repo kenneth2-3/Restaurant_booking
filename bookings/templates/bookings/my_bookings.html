@@ -28,11 +28,21 @@
                             {% endif %}
                         </td>
                         <td>
-                            {% if not booking.canceled %}
-                                <a href="{% url 'cancel_booking' booking.id %}" class="btn btn-danger btn-sm">Cancel</a>
-                            {% else %}
-                                <span class="text-muted">-</span>
-                            {% endif %}
+                            <td class="d-flex gap-2">
+                                {% if not booking.canceled %}
+                                    <a href="{% url 'cancel_booking' booking.id %}" class="btn btn-warning btn-sm">
+                                        Cancel
+                                    </a>
+                                {% endif %}
+
+                                <!-- DELETE FORM -->
+                                <form method="POST" action="{% url 'delete_booking' booking.id %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        Delete
+                                    </button>
+                                </form>
+                            </td>
                         </td>
                     </tr>
                     {% endfor %}

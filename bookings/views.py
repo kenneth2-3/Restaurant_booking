@@ -48,6 +48,13 @@ def cancel_booking(request, pk):
         messages.success(request, "Your booking has been cancelled.")
     return redirect('my_bookings')
 
+@login_required
+def delete_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+    booking.delete()
+    messages.success(request, "Booking deleted successfully.")
+    return redirect('my_bookings')
+
 
 @staff_member_required
 def manage_bookings(request):
