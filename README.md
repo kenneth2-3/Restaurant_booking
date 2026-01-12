@@ -127,6 +127,16 @@ AYCE_RESTAURANT/
 ├── README.md           # Project documentation
 └── TESTING.md          # Manual + automated test documentation
 ```
+---
+### Wireframes
+
+### Desktop
+- [Desktop Homepage Wireframe](documentation/homepage_desktop.png)
+- [Desktop Homepage Wireframe Cont'd](documentation/homepage_desktop_2.png)
+- [Desktop Homepage New User Wireframe](documentation/homepage_deskop_newuser.png)
+- [Desktop Menupage Wireframe](documentation/desktop_menu_page.png)
+- [Desktop Bookingspage Wireframe](documentation/desktop_booking_page.png)
+
 
 ## Bugs
 
