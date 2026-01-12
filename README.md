@@ -46,6 +46,161 @@ AYCE Restaurant Booking System is designed to:
 
 ---
 
+## CRUD Functionality
+
+This application implements full CRUD (Create, Read, Update, Delete) functionality for managing restaurant bookings.
+
+### Create
+Authenticated users can create a booking using a form that captures the booking date, time slot, and number of guests. Submitted data is validated before being saved to the database, and users receive clear feedback messages upon success or failure.
+
+### Read
+Users can view all of their existing bookings on the **My Bookings** page. Booking information is displayed in a structured table showing the date, time, number of guests, and current status (confirmed or cancelled).
+
+### Update
+Users can update existing bookings through an edit form that is prefilled with the current booking data. Editable fields include the booking date, time slot, and number of guests.
+
+Server-side validation prevents users from selecting past dates, ensuring that all bookings adhere to real-world business constraints.
+
+### Delete
+Users can permanently delete bookings using a delete action available on the **My Bookings** page. Deletion actions are restricted to the authenticated user who owns the booking, ensuring data security and integrity.
+
+---
+
+## Business Logic & Validation
+
+The application enforces several business rules to ensure valid and consistent data:
+
+- Users must be authenticated to create, update, or delete bookings.
+- Booking dates cannot be set in the past.
+- Booking times are restricted to predefined time slots using model choices.
+- Users can only modify or delete their own bookings.
+- Clear success and error messages are displayed to inform users of the outcome of their actions.
+
+These rules are enforced using a combination of Django model constraints, server-side validation, and user feedback via Django messages.
+
+---
+
+## Data Model Design
+
+The booking system is built around a custom Django model that represents real-world booking requirements.
+
+The model uses appropriate field types and constraints to ensure data integrity, including the use of predefined choices for booking times and validation for guest numbers.
+
+---
+
+## Agile Development
+
+This project was developed using an Agile methodology. User stories were identified at the beginning of development and tracked using GitHub Issues to manage progress.
+
+---
+
+# Security, Permissions & Project Management Documentation
+
+---
+
+## Authentication, Authorisation & Permissions
+
+User authentication and access control are implemented using Django Allauth. Only authenticated users are permitted to access restricted areas of the application such as booking creation, modification, and deletion.
+
+### Authentication
+- Users can register, log in, and log out using Django Allauth.
+- The user’s authentication status is clearly indicated in the navigation bar.
+- Non-authenticated users attempting to access restricted pages are redirected to the login page.
+- Authenticated users attempting to access the login or signup pages are redirected to the homepage.
+
+### Object-Level Permissions & Defensive Design
+
+To prevent unauthorised access through direct URL manipulation, all views that modify booking data enforce object-level permissions.
+
+Each booking is retrieved using both the booking ID and the currently authenticated user, ensuring that users can only view, edit, cancel, or delete their own bookings.
+
+---
+
+### User Story 1: Create a Booking
+
+**As an authenticated user**,  
+I want to create a booking,  
+So that I can reserve a table at the restaurant.
+
+**Acceptance Criteria**
+- User must be logged in
+- User can submit a booking form with date, time slot, and number of guests
+- Booking is saved to the database
+- User receives a success or error message
+- Invalid inputs are rejected
+
+---
+
+### User Story 2: View My Bookings
+
+**As an authenticated user**,  
+I want to view my existing bookings,  
+So that I can manage my reservations.
+
+**Acceptance Criteria**
+- User must be logged in
+- User can view a list of their own bookings
+- Booking details include date, time, guests, and status
+- Cancelled bookings are clearly indicated
+
+---
+
+### User Story 3: Update a Booking
+
+**As an authenticated user**,  
+I want to update an existing booking,  
+So that I can change my reservation details.
+
+**Acceptance Criteria**
+- User must be logged in
+- User can edit the booking date, time slot, and number of guests
+- Edit form is prefilled with existing booking data
+- Past dates cannot be selected
+- User receives confirmation on successful update
+
+---
+
+### User Story 4: Cancel a Booking
+
+**As an authenticated user**,  
+I want to cancel a booking,  
+So that I can free up my reservation if plans change.
+
+**Acceptance Criteria**
+- User must be logged in
+- Booking status can be changed to cancelled
+- Cancelled bookings remain visible in the system
+- Booking cannot be cancelled more than once
+
+---
+
+### User Story 5: Delete a Booking
+
+**As an authenticated user**,  
+I want to delete a booking,  
+So that I can permanently remove it from my account.
+
+**Acceptance Criteria**
+- User must be logged in
+- User can only delete their own bookings
+- Booking is permanently removed from the database
+- User receives a confirmation message
+
+---
+
+### User Story 6: Authentication & Access Control
+
+**As a user**,  
+I want to securely log in and log out,  
+So that my bookings and personal data are protected.
+
+**Acceptance Criteria**
+- Users can sign up, log in, and log out
+- Only authenticated users can create, update, or delete bookings
+- Users cannot access or modify other users’ bookings
+
+---
+
 ## Technologies used
 
 ### Languages:
